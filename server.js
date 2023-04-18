@@ -25,7 +25,7 @@ io.on('connection', async function(socket){
 
     socket.on('out-msg', (color)=>{
         // io.to(socket.id).emit('message', {message:message});
-        io.emit('out-msg', (color));
+        io.emit('out-msg', {message:color});
     });
 
     socket.on('disconnect', function () {
