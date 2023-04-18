@@ -23,9 +23,9 @@ io.on('connection', async function(socket){
     io.to(socket.id).emit('message', {message:'A Little Color Picker'});
 
 
-    socket.on('change-color', (color)=>{
-        io.to(socket.id).emit('message', {message:'Color changed!'});
-        io.emit('change-color', (color));
+    socket.on('out-msg', (color)=>{
+        // io.to(socket.id).emit('message', {message:message});
+        io.emit('out-msg', (color));
     });
 
     socket.on('disconnect', function () {
